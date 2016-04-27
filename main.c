@@ -20,6 +20,7 @@ unsigned Microseconds(void) {
 }
 
 int main(int argc, char *argv[]) {
+     unsigned t[2];
      struct GPU_FFT_COMPLEX *dataIn,*dataOut;
      struct GPU_FFT *fftinfo;
 
@@ -33,7 +34,9 @@ int main(int argc, char *argv[]) {
      t[0] = Microseconds();
      gpu_fft_execute(fftinfo); // call one or many times
      t[1] = Microseconds();
-     
+
+     printf("usecs = %d\n", (t[1]-t[0]));
+
      gpu_fft_release(fftinfo); // Videocore memory lost if not freed !
      return 0;
 }
