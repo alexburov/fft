@@ -23,6 +23,7 @@ int main(int argc, char **argv) {
 	int data[30000];
 	for (int i = 0; i < 30000; i++) {
 		bcm2835_spi_transfernb(mosi, miso, 2);
+//
 //		printf("%d\n", miso[1] + ((miso[0] & 3) << 8));
 //		data[i] = miso[1] + ((miso[0] & 3) << 10);
 		data[i] = miso[1] + miso[0];
