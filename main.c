@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
      struct GPU_FFT_COMPLEX *dataIn,*dataOut;
      struct GPU_FFT *fftinfo;
 
-     mb = mbox_open();
+     int mb = mbox_open();
      gpu_fft_prepare(mb,12,GPU_FFT_FWD,1,&fftinfo);
 
      dataIn = fftinfo->in;
